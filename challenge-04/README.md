@@ -33,7 +33,7 @@ isTruthy([]);
 isTruthy(-1);
 isTruthy(2.3);
 isTruthy("Eliabe" + " Leal");
-isTruthy(12345678945);
+isTruthy(function () {});
 isTruthy({nome: "Eliabe"});
 isTruthy([1]);
 
@@ -117,9 +117,12 @@ citado acima, no lugar de "pessoas".
 carro.addPessoas = function (qtd) {
   var pessoas = (carro.assentos - carro.quantidadePessoas > 1) ? "pessoas" : "pessoa";
   var assentosDisponiveis = carro.assentos - carro.quantidadePessoas;
-  if(carro.assentos === carro.quantidadePessoas) {
+  var totalPessoas = qtd + carro.quantidadePessoas;
+
+  if(carro.assentos === carro.quantidadePessoas && totalPessoas >= carro.assentos) {
     return "O carro já está lotado!"
-  } else if(qtd > assentosDisponiveis) {
+  }
+  if(qtd > assentosDisponiveis) {
     return "Só cabem mais " + assentosDisponiveis + " " + pessoas +"!"
   }
 
