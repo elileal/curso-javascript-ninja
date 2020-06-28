@@ -79,7 +79,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-  return "Eu peso " + pessoa.peso +" Kg."
+  return "Eu peso " + pessoa.peso +"Kg."
 }
 
 /*
@@ -107,7 +107,7 @@ pessoa.mostrarIdade(); // 'Olá, eu tenho 35 anos!'
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso(); // 'Eu peso 86 Kg.'
+pessoa.mostrarPeso(); // 'Eu peso 86Kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
@@ -178,17 +178,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  var sexo = 'o'
+  var sexo = 'o';
+  var idade = 'anos';
+  var metro = 'metros';
+
   if(pessoa.sexo === 'Feminino') {
-    sexo = 'a'
+    sexo = 'a';
   }
-  var idade = 'anos'
+
   if(pessoa.idade === 1) {
-    idade = 'ano'
+    idade = 'ano';
   }
-  var metro = 'metros'
+  
   if(pessoa.caminhouQuantosMetros === 1) {
-    metro = 'metro'
+    metro = 'metro';
   }
 
 
