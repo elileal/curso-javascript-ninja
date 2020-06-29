@@ -51,7 +51,6 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(5));
-console.log(showTeamPosition(4));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(8));
 
@@ -77,20 +76,28 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 var convertToHex = function (color) {
+  var hexa;
   switch (color) {
     case 'red':
-      return 'O hexadecimal para a cor ' + color + ' é FF0000.';
+      hexa = '#FF0000';
+      break;
     case 'yellow':
-      return 'O hexadecimal para a cor ' + color + ' é FFFF00.';
+      hexa = '#FFFF00';
+      break;
     case 'blue':
-      return 'O hexadecimal para a cor ' + color + ' é 0000FF.';
+      hexa = '#0000FF';
+      break;
     case 'gray':
-      return 'O hexadecimal para a cor ' + color + ' é 808080.';
+      hexa = '#808080';
+      break;
     case 'purple':
-      return 'O hexadecimal para a cor ' + color + ' é 800080.';
+      hexa = '#800080';
+      break;
     default:
-      return 'Não temos o equivalente hexadecimal para ' + color + '.'
+      return 'Não temos o equivalente hexadecimal para ' + color + '.';
   }
+  return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
+
 }
 
 /*
