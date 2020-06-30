@@ -5,7 +5,7 @@ desses parâmetros.
 */
 var sum = function calculateSum(x, y) {
   return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -29,7 +29,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-  return 'showName';
+  return 'Eliabe Leal';
 }
 
 /*
@@ -80,7 +80,7 @@ function calculator(opetator) {
         return 'Operação inválida.'
     }
     return 'Resultado da operação: ' + x + ' ' + opetator + ' ' + y + ' = ' + result + '.'
-  }
+  };
 }
 
 /*
@@ -104,6 +104,7 @@ var subtraction = calculator('-');
 var multiplication = calculator('*');
 var division = calculator('/');
 var mod = calculator('%');
+var err = calculator('x');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -113,4 +114,5 @@ console.log(subtraction(200, 1));
 console.log(multiplication(200, 10));
 console.log(division(200, 50));
 console.log(mod(200, 1));
+console.log(err(200, 1));
 
