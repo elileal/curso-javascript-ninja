@@ -72,7 +72,7 @@
   */
   console.log('\nOperation:');
   var operation = justMod2Or3.reduce(function (acc, value) {
-    return acc + value;
+    return (acc + 1) * value;
   }, 0);
   console.log(operation);
 
@@ -84,7 +84,7 @@
   */
   console.log('\nOperation 2:');
   var operation2 = justMod2Or3.reduceRight(function (acc, value) {
-    return acc + value;
+    return (acc + 1) * value;
   }, 0);
   console.log(operation2);
 
@@ -100,8 +100,8 @@
   var name = ['E', 'li', 'a', 'be'];
 
   console.log(name.reduce(function (acc, value) {
-    return acc + value + 'P';
-  }, 'P'));
+    return acc + 'P' + value;
+  }, ''));
 
 
   /*
@@ -137,6 +137,15 @@
       ? 'Existe um objeto { number: 2 } em numberObjects!'
       : 'Não existe um objeto { number: 2 } em numberObjects :('
   );
+  // NA CHECAGEM DO INDEXOF ESTOU CRIANDO UM NOVO OBJETO, E COMO ESSE NOVO OBJ TEM UMA REFERÊNCIA DIFERENTE DA DE NUMBEROBJECTS, LOGO NÃO SÃO IGUAIS.
+  // A solução é passar por referência:
+  var obj = numberObjects[1];
+  console.log(
+    numberObjects.indexOf(obj) > -1
+      ? 'Existe um objeto { number: 2 } em numberObjects!'
+      : 'Não existe um objeto { number: 2 } em numberObjects :('
+  );
+
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
