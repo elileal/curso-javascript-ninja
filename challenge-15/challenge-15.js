@@ -4,6 +4,8 @@
   Sempre que se cria uma variável sem o uso do var ela é criada "pendurada" no objeto window ou global (node)
 
   Object arguments: array like, parece com um array. Representa todos os argumentos passados para a função. Ele não é um array, mas funciona como um. Nunca use arguments como nome de argumento, pois ele sobre escreve o objeto arguments
+
+  Server:  python3 -m http.server 9001
   
 */
 // exemplo
@@ -47,19 +49,19 @@
     que será instanciado.
   */
   function Person(name, lastName, age) {
-    this.name = name
-    this.lastName = lastName
-    this.age = age
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
     this.getFullName = function getFullName() {
       return this.name + ' ' + this.lastName;
-    }
+    };
     this.getAge = function getAge() {
       return this.age;
-    }
+    };
     this.addAge = function addAge() {
       this.age += arguments[0];
       return this;
-    }
+    };
   }
 
   /*
@@ -69,29 +71,29 @@
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
   console.log('Novas pessoas criadas à partir de Person:');
-  var Joao = new Person("João", "Pedro", 18);
-  var Eli = new Person("Eli", "Soare", 33);
-  var Sofi = new Person("Sofi", "Araújo", 3);
-  console.log(Joao);
-  console.log(Eli);
-  console.log(Sofi);
+  var joao = new Person("João", "Pedro", 18);
+  var eli = new Person("Eli", "Soare", 33);
+  var sofi = new Person("Sofi", "Araújo", 3);
+  console.log(joao);
+  console.log(eli);
+  console.log(sofi);
 
   /*
   Mostre no console o nome completo de cada pessoa.
   */
   console.log('\nNomes das pessoas:');
-  console.log(Joao.getFullName());
-  console.log(Eli.getFullName());
-  console.log(Sofi.getFullName());
+  console.log(joao.getFullName());
+  console.log(eli.getFullName());
+  console.log(sofi.getFullName());
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log('\nIdade das pessoas:');
-  console.log(Joao.getFullName() + " tem " + Joao.getAge() + " anos.");
-  console.log(Eli.getFullName() + " tem " + Eli.getAge() + " anos.");
-  console.log(Sofi.getFullName() + " tem " + Sofi.getAge() + " anos.");
+  console.log(joao.getFullName() + " tem " + joao.getAge() + " anos.");
+  console.log(eli.getFullName() + " tem " + eli.getAge() + " anos.");
+  console.log(sofi.getFullName() + " tem " + sofi.getAge() + " anos.");
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -99,8 +101,8 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log('\nNova idade das pessoas:');
-  console.log(Joao.getFullName() + " agora tem " + Joao.addAge(5).getAge() + " anos.");
-  console.log(Eli.getFullName() + " agora tem " + Eli.addAge(50).getAge() + " anos.");
-  console.log(Sofi.getFullName() + " agora tem " + Sofi.addAge(500).getAge() + " anos.");
+  console.log(joao.getFullName() + " agora tem " + joao.addAge(5).getAge() + " anos.");
+  console.log(eli.getFullName() + " agora tem " + eli.addAge(50).getAge() + " anos.");
+  console.log(sofi.getFullName() + " agora tem " + sofi.addAge(-1).getAge() + " anos.");
 }
 )()
