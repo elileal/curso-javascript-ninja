@@ -64,14 +64,22 @@ delete server para deletar propriedades de objects
     Mostre o resultado no console.
     */
     console.log('\nEra "Roberto", agora é:');
-    // ?
+    console.log("Roberto"
+        .split('')
+        .reverse()
+        .join('')
+        .replace('o', 'a')
+        .split('')
+        .reverse()
+        .join('')
+    );
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log('\nParte de uma string:');
-    // ?
+    console.log('Fernando'.substring(8, 3));
 
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -83,5 +91,14 @@ delete server para deletar propriedades de objects
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
-    // ?
+    var myName = ''
+    myName = 'Eliabe';
+    myName = "Fernando"
+    myName = "RoBertO"
+    myName = "gabriEla"
+    var inter = myName.split('').map((c, i) => {
+        return (i % 2 === 0) ? c.toUpperCase() : c.toLowerCase();
+    }).join('');
+    console.log(inter);
+
 })()
