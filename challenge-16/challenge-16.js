@@ -21,8 +21,8 @@ delete server para deletar propriedades de objects
     */
     console.log('As letras do seu nome:');
     var name = "Eliabe"
-    for (let index = 0; index < name.length;) {
-        console.log(name.charAt(index) + ' é a ' + ++index + 'ª letra do meu nome');
+    for (let index = 0, len = name.length; index < len; index++) {
+        console.log(name[index] + ' é a ' + (index + 1) + 'ª letra do meu nome');
     }
 
     /*
@@ -39,10 +39,11 @@ delete server para deletar propriedades de objects
     */
     console.log('\nNome convertido à partir de um slug:');
     var fullName = 'eliabe-leal';
-    var result = fullName.split('-').map((word) => {
-        return word.charAt(0).toLocaleUpperCase() + word.slice(1);
+    var result = fullName.split('-').map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(' ');
-    console.log('slug:', fullName, 'convert:', result);
+    console.log('slug:', fullName);
+    console.log('convert:', result);
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -55,24 +56,18 @@ delete server para deletar propriedades de objects
     */
     console.log('\nMeus amigos:');
     var friends = ['Bruna', 'Pablo', 'Ewelin', 'Elyelton', 'Rafael', 'João'];
-    var twoLast = friends.slice(-2).join(' e ');
-    var join = friends.slice(0, -2).join(', ').concat(', ', twoLast, ' são meus amigos.');
-    console.log(join);
+    var phrase = friends.reduce((acc, value, index) => {
+        var separator = friends.length - 1 === index ? ' e ' : ', ';
+        return acc + separator + value;
+    }).concat(' são meus amigos.');
+    console.log(phrase);
 
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
     Mostre o resultado no console.
     */
     console.log('\nEra "Roberto", agora é:');
-    console.log("Roberto"
-        .split('')
-        .reverse()
-        .join('')
-        .replace('o', 'a')
-        .split('')
-        .reverse()
-        .join('')
-    );
+    console.log("Roberto".replace('to', 'ta'));
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
